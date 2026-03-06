@@ -278,6 +278,9 @@ Default configuration:
 
 ---
 
+# Demo
+- https://doxinger.github.io/smart-fingerprint/
+
 # Notes
 
 - Fingerprints can change after browser updates, driver/GPU changes, privacy settings, or anti-fingerprinting tools.
