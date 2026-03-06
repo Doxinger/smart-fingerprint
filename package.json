@@ -1,6 +1,6 @@
 {
-  "name": "smart-fingerprint",
-  "version": "3.0.0",
+  "name": "@doxinger/smart-fingerprint",
+  "version": "3.0.1",
   "description": "Lightweight browser fingerprint library with stable, full and session fingerprints, similarity scoring, caching and ESM/UMD support.",
   "type": "module",
   "scripts": {
@@ -27,5 +27,8 @@
     "browser-id"
   ],
   "author": "doxinger",
-  "license": "APACHE-2.0"
+  "license": "Apache-2.0",
+  "publishConfig": {
+    "access": "public"
+  }
 }
