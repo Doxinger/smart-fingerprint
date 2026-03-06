@@ -1,1 +1,28 @@
-
+{
+  "name": "smart-fingerprint",
+  "version": "3.0.0",
+  "description": "Lightweight browser fingerprint library with stable, full and session fingerprints, similarity scoring, caching and ESM/UMD support.",
+  "type": "module",
+  "main": "./src/main.umd.js",
+  "module": "./src/main.js",
+  "exports": {
+    ".": {
+      "import": "./src/main.js",
+      "default": "./src/main.umd.js"
+    }
+  },
+  "files": [
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "fingerprint",
+    "browser-fingerprint",
+    "device-fingerprint",
+    "visitor-id",
+    "browser-id"
+  ],
+  "author": "doxinger",
+  "license": "APACHE-2.0"
+}
