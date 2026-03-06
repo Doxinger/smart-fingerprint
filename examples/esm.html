@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>SmartFingerprint ESM Example</title>
+</head>
+<body>
+  <h1>SmartFingerprint ESM Example</h1>
+
+  <script type="module" src="../src/main.js"></script>
+
+  <script type="module">
+    const stop = window.SmartFingerprint.on("fingerprint:ready", (event) => {
+      console.log("fingerprint ready", event.detail);
+    });
+
+    const current = await window.SmartFingerprint.get({
+      includeCanvas: true,
+      includeWebGL: true,
+      includeAudio: false
+    });
+
+    console.log("current", current);
+
+    const prev = JSON.parse(localStorage.getItem("demo_prev_fp") || "null");
+    if (prev) {
+      console.log("compare", window.SmartFingerprint.compare(prev, current));
+    }
+
+    localStorage.setItem("demo_prev_fp", JSON.stringify(current));
+    stop();
+  </script>
+</body>
+</html>
