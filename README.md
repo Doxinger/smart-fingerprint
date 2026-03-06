@@ -35,7 +35,7 @@ Also includes:
 ## Installation
 
 ```bash
-npm install smart-fingerprint
+npm install @doxinger/smart-fingerprint
 ```
 
 Or copy the project files directly into your app.
