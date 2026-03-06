@@ -8,15 +8,15 @@
   <h1>SmartFingerprint ESM Example</h1>
 
   <script type="module">
-    import SmartFingerprint from "https://cdn.jsdelivr.net/npm/@doxinger/smart-fingerprint/src/main.js";
+    await import("https://cdn.jsdelivr.net/npm/@doxinger/smart-fingerprint/src/main.js");
 
-    window.SmartFingerprint = SmartFingerprint;
+    const api = window.SmartFingerprint;
 
-    const stop = SmartFingerprint.on("fingerprint:ready", (event) => {
+    const stop = api.on("fingerprint:ready", (event) => {
       console.log("fingerprint ready", event.detail);
     });
 
-    const current = await SmartFingerprint.get({
+    const current = await api.get({
       includeCanvas: true,
       includeWebGL: true,
       includeAudio: false
@@ -27,7 +27,7 @@
     const prev = JSON.parse(localStorage.getItem("demo_prev_fp") || "null");
 
     if (prev) {
-      console.log("compare", SmartFingerprint.compare(prev, current));
+      console.log("compare", api.compare(prev, current));
     }
 
     localStorage.setItem("demo_prev_fp", JSON.stringify(current));
