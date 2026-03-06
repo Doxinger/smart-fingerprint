@@ -1,9 +1,26 @@
-- uses: actions/checkout@v4
+name: CI
 
-- uses: actions/setup-node@v4
-  with:
-    node-version: 22.x
-    cache: npm
-    cache-dependency-path: package-lock.json
+on:
+  push:
+  pull_request:
 
-- run: npm ci
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.x
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run tests
+        run: npm test
