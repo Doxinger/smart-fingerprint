@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>SmartFingerprint UMD Example</title>
+</head>
+<body>
+  <h1>SmartFingerprint UMD Example</h1>
+
+  <script src="../src/main.umd.js"></script>
+  <script>
+    var stop = SmartFingerprint.on("fingerprint:ready", function (event) {
+      console.log("fingerprint ready", event.detail);
+    });
+
+    SmartFingerprint.get({
+      includeCanvas: true,
+      includeWebGL: true,
+      includeAudio: false
+    }).then(function (current) {
+      console.log("current", current);
+
+      var prev = JSON.parse(localStorage.getItem("demo_prev_fp") || "null");
+      if (prev) {
+        console.log("compare", SmartFingerprint.compare(prev, current));
+      }
+
+      localStorage.setItem("demo_prev_fp", JSON.stringify(current));
+      stop();
+    });
+  </script>
+</body>
+</html>
