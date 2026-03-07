@@ -3,6 +3,14 @@
   "version": "3.0.2",
   "description": "Lightweight browser fingerprint library with stable, full and session fingerprints, similarity scoring, caching and ESM/UMD support.",
   "type": "module",
+  "homepage": "https://doxinger.github.io/smart-fingerprint/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Doxinger/smart-fingerprint.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Doxinger/smart-fingerprint/issues"
+  },
   "scripts": {
     "test": "node -e \"console.log('No tests configured')\""
   },
@@ -21,10 +29,21 @@
   ],
   "keywords": [
     "fingerprint",
+    "fingerprinting",
     "browser-fingerprint",
     "device-fingerprint",
     "visitor-id",
-    "browser-id"
+    "browser-id",
+    "browser-tracking",
+    "device-id",
+    "browser-identity",
+    "client-fingerprint",
+    "bot-detection",
+    "fraud-detection",
+    "anti-fraud",
+    "browser-security",
+    "tracking",
+    "web-fingerprint"
   ],
   "author": "doxinger",
   "license": "Apache-2.0",
