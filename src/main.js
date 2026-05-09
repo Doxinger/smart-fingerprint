@@ -34,7 +34,7 @@ window.SmartFingerprint = {
     return onFingerprintEvent(name, handler, options);
   },
 
-  version: "3.0.0"
+  version: "3.0.2"
 };
 
 export { SmartFingerprint };
